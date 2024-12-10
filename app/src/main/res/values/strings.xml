@@ -1,0 +1,27 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Loading Status Bar Animation</string>
+    <string name="app_description">Download files from Internet</string>
+    <string name="action_settings">Settings</string>
+
+
+    <string name="notification_title">Udacity: Android Kotlin Nanodegree </string>
+    <string name="notification_description">The Project 3 repository is downloaded</string>
+    <string name="notification_button">See changes</string>
+
+    <string name="button_init_name">Click to download</string>
+    <string name="button_loading_name">We are loading</string>
+    <string name="title_activity_detail">DetailActivity</string>
+
+    <string name="no_radio_group_selected">Please choose one option to download</string>
+
+    <string name="glide_url">Glide - Image Loading Library by BumpTech</string>
+    <string name="loadapp_url">LoadApp - Current repository by Udacity</string>
+    <string name="retrofit_url">Retrofit - Type-safe HTTP client for Android and Java by Square, Inc</string>
+
+    <string name="notification_channel_id">download_channel</string>
+    <string name="notification_channel_name">Github Repository</string>
+    <string name="notification_channel_description">download github repository</string>
+
+    <string name="download_successful">Download Successful</string>
+    <string name="download_failed">Download Failed</string>
+</resources>
