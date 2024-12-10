@@ -27,11 +27,12 @@ class LoadingButton @JvmOverloads constructor(
 
     private var loadingButtonText: String = "Loading"
     private var completeButtonText: String = "Complete"
+    private var clickedButtonText: String = "Click to Download"
     private var loadingButtonColor: Int = Color.BLUE
     private var completeButtonColor: Int = Color.GREEN
     private var arcColor: Int = Color.YELLOW
 
-    private var text: String = completeButtonText
+    private var text: String = clickedButtonText
 
     private var valueAnimator = ValueAnimator()
 
@@ -47,9 +48,12 @@ class LoadingButton @JvmOverloads constructor(
         }
     }
 
-    var buttonState: ButtonState by Delegates.observable(ButtonState.Completed) { _, _, new ->
+    var buttonState: ButtonState by Delegates.observable(ButtonState.Clicked) { _, _, new ->
         when (new) {
-            ButtonState.Clicked -> {}
+            ButtonState.Clicked -> {
+                text = clickedButtonText
+                invalidate()
+            }
             ButtonState.Loading -> {
                 text = loadingButtonText
                 valueAnimator = ValueAnimator.ofFloat(0F, 1F).apply {
