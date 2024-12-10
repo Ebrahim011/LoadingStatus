@@ -35,14 +35,25 @@ class LoadingButton @JvmOverloads constructor(
 
     private var valueAnimator = ValueAnimator()
 
+    init {
+        attrs?.let {
+            val typedArray = context.obtainStyledAttributes(it, R.styleable.LoadingButton)
+            completeButtonColor = typedArray.getColor(R.styleable.LoadingButton_completeButtonColor, Color.GREEN)
+            loadingButtonColor = typedArray.getColor(R.styleable.LoadingButton_loadingButtonColor, Color.BLUE)
+            arcColor = typedArray.getColor(R.styleable.LoadingButton_arcColor, Color.YELLOW)
+            loadingButtonText = typedArray.getString(R.styleable.LoadingButton_loadingButtonText) ?: "Loading"
+            completeButtonText = typedArray.getString(R.styleable.LoadingButton_completeButtonText) ?: "Complete"
+            typedArray.recycle()
+        }
+    }
+
     var buttonState: ButtonState by Delegates.observable(ButtonState.Completed) { _, _, new ->
         when (new) {
             ButtonState.Clicked -> {}
             ButtonState.Loading -> {
                 text = loadingButtonText
                 valueAnimator = ValueAnimator.ofFloat(0F, 1F).apply {
-                    duration = 2500L
-                    repeatCount = ValueAnimator.INFINITE
+                    duration = 2000
                     addUpdateListener {
                         progressValue = it.animatedValue as Float
                         invalidate()
