@@ -1,5 +1,3 @@
-# Loading Status Bar Animation ☁️
-[![API](https://img.shields.io/badge/API-24%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=24)
 
 Project created for the Udacity nanodegree Android Kotlin Developer program.
 
